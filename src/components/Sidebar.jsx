@@ -89,6 +89,11 @@ const Sidebar = () => {
             </p>
             <ul className="space-y-2">
               <li className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 cursor-not-allowed opacity-60">
+                <FiHome className="text-xl" />
+                <span className="font-medium">Dashboard</span>
+                <FiLock className="ml-auto text-sm" />
+              </li>
+              <li className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 cursor-not-allowed opacity-60">
                 <FiPackage className="text-xl" />
                 <span className="font-medium">Inventario</span>
                 <FiLock className="ml-auto text-sm" />

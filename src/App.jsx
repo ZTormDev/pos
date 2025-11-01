@@ -14,6 +14,7 @@ import CashRegister from "./pages/CashRegister";
 import Reports from "./pages/Reports";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import RoleBasedRedirect from "./components/RoleBasedRedirect";
 
 function App() {
   return (
@@ -30,8 +31,15 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Navigate to="/dashboard" replace />} />
-              <Route path="dashboard" element={<Dashboard />} />
+              <Route index element={<RoleBasedRedirect />} />
+              <Route
+                path="dashboard"
+                element={
+                  <ProtectedRoute allowedRoles={["admin"]}>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="sales" element={<Sales />} />
               <Route
                 path="inventory"
