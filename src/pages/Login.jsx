@@ -193,7 +193,7 @@ const Login = () => {
 
         {/* Footer */}
         <p className="text-center text-white text-sm mt-6 font-medium drop-shadow-lg">
-          © 2025 POS System - Portfolio Project
+          © 2025 POS System - by ZTormDev
         </p>
       </div>
     </div>

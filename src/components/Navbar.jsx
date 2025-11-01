@@ -81,13 +81,27 @@ const Navbar = () => {
           </div>
 
           {/* Usuario */}
-          <div className="flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-lg">
-            <div className="bg-primary-600 text-white rounded-full p-2">
+          <div className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-primary-50 to-blue-50 rounded-lg border border-primary-200">
+            <div
+              className={`${
+                user?.role === "admin"
+                  ? "bg-gradient-to-br from-primary-600 to-primary-700"
+                  : "bg-gradient-to-br from-green-600 to-green-700"
+              } text-white rounded-full p-2 shadow-md`}
+            >
               <FiUser className="text-lg" />
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-800">{user?.name}</p>
-              <p className="text-xs text-gray-500 capitalize">{user?.role}</p>
+              <p className="text-sm font-semibold text-gray-800">
+                {user?.name}
+              </p>
+              <p
+                className={`text-xs font-medium capitalize ${
+                  user?.role === "admin" ? "text-primary-600" : "text-green-600"
+                }`}
+              >
+                {user?.role === "admin" ? "👑 Administrador" : "💼 Cajero"}
+              </p>
             </div>
           </div>
 
